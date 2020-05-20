@@ -1,0 +1,51 @@
+.home_link:hover {
+  border: 1px solid #cccccc;
+}
+.home_link {
+  border: 1px solid #f2f2f2;
+}
+.lesson_link2 {
+  /* background-color: #f2f2f2; */
+  border: 1px solid #ffffff;
+}
+.lesson_link2:hover {
+  /* background-color: #f2f2f2; */
+  border: 1px solid #cccccc;
+}
+.hand {
+  cursor: pointer;
+}
+.point {
+  cursor: default;
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+.hide {
+  display: none;
+}
+.inline {
+  display: inline;
+}
+.toast {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  position: fixed;
+  z-index: 9999;
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
+}
+.speaker {
+  border: 1px solid #ffffff;
+}
+.speaker:hover {
+  border: 1px solid #cccccc;
+}

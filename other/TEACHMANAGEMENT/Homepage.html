@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> HOME PAGE </title>
+		<link rel="stylesheet" type="text/css" href="Homepage.css">
+		
+<script type="text/javaScript">
+	function validateForm() {
+		var x = document.forms["FORM"]["teacherID"].value;
+		var y = document.forms["FORM"]["password"].value;
+	if (x == "") {
+		alert("ID must be filled out!");
+		return false;
+		}
+	if (y== "") {
+		alert("Password must be filled out!");
+		return false;
+	}
+}
+</script>
+		
+<body>
+<h1> <center> WELCOME TO THE TEACHING MANAGEMENT SYSTEM </center> </h1> 
+	<div class="loginbox">
+	<img src="Classchild.jpg" class="pics">
+		<h2> Login Here </h2>
+		<form name="FORM" method="post" action= "Lesson.html" onsubmit="return validateForm()">
+		<p> Teacher ID </p>
+		<input type="text" name="teacherID" placeholder="Enter your ID">
+		
+		<p> Password </p>
+		<input type= "password" name= "password" placeholder= "Enter your password">
+		<input type="submit" name="" value="Login">
+		
+		<a href= '#'> Lost Your Password? </a></br>
+		<a href= 'CreateAccount.html'> Sign In/Open New Account? </a><br>
+	</div>
+</body>
+</head>
+</html> 
