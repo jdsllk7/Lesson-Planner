@@ -1,5 +1,6 @@
 .home_link:hover {
   border: 1px solid #cccccc;
+  box-shadow: 2px 2px 5px #cccccc;
 }
 .home_link {
   border: 1px solid #f2f2f2;
@@ -48,4 +49,7 @@
 }
 .speaker:hover {
   border: 1px solid #cccccc;
+}
+.navbar-nav .nav-item .nav-link:hover{
+  color: #11cbd7 !important;
 }

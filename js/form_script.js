@@ -3,20 +3,67 @@ $(document).ready(function () {
   $(document).on("click", "a[href$='#finish']", function (e) {
     e.preventDefault();
 
-    console.log($("select[name=grade]").val(), $("select[name=subject]").val(), $("input[name=topic]").val(), $("input[name=lessonsName]").val())
-    if (!$("select[name=grade]").val() || !$("select[name=subject]").val() || !$("input[name=topic]").val() || !$("input[name=lessonsName]").val()) {
-      displayAlertMsg('Fill in the form correctly before you submit', false)
-    }else{
+    console.log(
+      $("select[name=grade]").val(),
+      $("select[name=subject]").val(),
+      $("input[name=topic]").val(),
+      $("input[name=lessonsName]").val()
+    );
+    if (
+      !$("select[name=grade]").val() ||
+      !$("select[name=subject]").val() ||
+      !$("input[name=topic]").val() ||
+      !$("input[name=lessonsName]").val()
+    ) {
+      return displayAlertMsg(
+        "Fill in the form correctly before you submit",
+        false
+      );
+    } else {
+      //reassign class names
+      $(".fileUpload").each(function (i) {
+        i = i + 1;
+        x = i;
+        console.log(i);
+        $(this).attr("name", "file" + i);
+        $(".fileCount").val(i);
+      });
+      $(".add_text_field").each(function (i) {
+        i = i + 1;
+        $(this).attr("name", "fileText" + i);
+      });
+      //loop through the files
+      let fileCount = $(".fileCount").val();
+      for (let x = 1; x <= fileCount; x++) {
+        let file = $("input[name=file" + x + "]");
+        let fileText = $("textarea[name=fileText" + x + "]");
+
+        console.log("data", file.val(), fileText.val(), x, fileCount);
+        if (!fileText.val() || !file.val()) {
+          return displayAlertMsg(
+            "Attach files and type some notes before you submit",
+            false
+          );
+        }
+      } //end for()
+
       $("#lessonForm").submit(); // Submit the form in js
+      // alert("submitted");
     }
   });
 
   /************ login form *************/
   $(document).on("click", "#loginSubmitBtn", function (e) {
     e.preventDefault();
-    console.log($("input[name=eNumber]").val(), $("input[name=password]").val())
+    console.log(
+      $("input[name=eNumber]").val(),
+      $("input[name=password]").val()
+    );
     if (!$("input[name=eNumber]").val() || !$("input[name=password]").val()) {
-      return displayAlertMsg("Incorrect credentials", false);
+      return displayAlertMsg(
+        "Fill in the form correctly before you submit",
+        false
+      );
     } else {
       return $("#loginForm").submit(); // Submit the form in js
     }
@@ -25,9 +72,24 @@ $(document).ready(function () {
   /************ register form *************/
   $(document).on("click", "#registerSubmitBtn", function (e) {
     e.preventDefault();
-    console.log($("input[name=eNumber]").val(), $("input[name=password]").val(), $("input[name=rePassword]").val())
-    if (!$("input[name=eNumber]").val() || !$("input[name=password]").val() || !$("input[name=rePassword]").val()) {
-      return displayAlertMsg("Fill in the form correctly before you submit", false);
+    console.log(
+      $("input[name=eNumber]").val(),
+      $("input[name=password]").val(),
+      $("input[name=rePassword]").val()
+    );
+    if (
+      !$("input[name=eNumber]").val() ||
+      !$("input[name=password]").val() ||
+      !$("input[name=rePassword]").val()
+    ) {
+      return displayAlertMsg(
+        "Fill in the form correctly before you submit",
+        false
+      );
+    } else if (
+      $("input[name=password]").val() !== $("input[name=rePassword]").val()
+    ) {
+      return displayAlertMsg("Passwords do not match", false);
     } else {
       return $("#registerForm").submit(); // Submit the form in js
     }
