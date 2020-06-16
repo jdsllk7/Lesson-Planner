@@ -48,18 +48,18 @@
           $fileType = '
           <div class="embed-responsive embed-responsive-16by9">
             <video controls>
-              <source type="video/mp4" class="embed-responsive-item" style="max-height: 500px;" src="' . $row["filePath"] . '">
+              <source type="video/mp4" class="embed-responsive-item" style="height: 500px;" src="' . $row["filePath"] . '">
             </video>
           </div>
           ';
         } elseif ($row["fileType"] == 'pdf') {
           $fileType = '
-          <embed src="' . $row["filePath"] . '" />
+          <embed style="height: 400px; width: 500px" src="' . $row["filePath"] . '" />
           ';
         } elseif ($row["fileType"] == 'image') {
           $fileType = '
-          <figure>
-            <img style="max-height: 500px;" src="' . $row["filePath"] . '" alt="Image placeholder" class="img-fluid" />
+          <figure style="height: 500px; width: 500px;">
+            <img width="500" height="600" src="' . $row["filePath"] . '" alt="Image placeholder" class="img-fluid" />
           </figure>
           ';
         }
@@ -81,9 +81,9 @@
               <div class="text mb-5">
                 <div class="form-group">
                   <h5 class="inline">Notes...</h5>
-                  <span onclick="playStopAudio(' . $row["fileText"] . ')" data-toggle="tooltip" title="Click to Play Audio Notes" class="btn mdi mdi-speaker-wireless mdi-24px speaker m-1"></span>
+                  <span onclick="playStopAudio(\'' . $row["fileText"] . '\')" data-toggle="tooltip" title="Click to Play Audio Notes" class="btn mdi mdi-speaker-wireless mdi-24px speaker m-1"></span>
                   <span onclick="playStopAudio(\'stop\')" data-toggle="tooltip" title="Stop Playing Audio Notes" class="btn mdi mdi-speaker-off mdi-24px speaker m-1"></span>
-                  <textarea class="form-control bg-white" rows="15" placeholder="Notes..." disabled></textarea>
+                  <textarea class="form-control bg-white" rows="15" placeholder="Notes..." disabled>' . $row["fileText"] . '</textarea>
                 </div>
               </div>
             </div>

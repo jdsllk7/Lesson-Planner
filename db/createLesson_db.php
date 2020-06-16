@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         grade,
         subject,
         topic,
-        lessonsName
+        lessonsName,
         userId
         ) VALUES (
           '$grade',
@@ -44,10 +44,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //collect file data from view
             for ($x = 1; $x <= $fileCount; $x++) {
 
-                $file = $_POST["file" . $x];
+                // $file = $_POST["file" . $x];
                 $fileText = $_POST["fileText" . $x];
 
-                if (isset($file) && !empty($file) && isset($fileText) && !empty($fileText)) {
+                // die($_FILES["file" . $x]["name"]);
+
+                if (isset($_FILES["file" . $x]["name"]) && !empty($_FILES["file" . $x]["name"]) && isset($fileText) && !empty($fileText)) {
 
                     // move files
                     if (!empty($_FILES["file" . $x]["name"])) {

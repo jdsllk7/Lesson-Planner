@@ -48,7 +48,7 @@ mysqli_query($conn, $sql);
 
 $sql = "CREATE TABLE IF NOT EXISTS lessonFiles (
 	fileId BIGINT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	fileText VARCHAR(300),
+	fileText VARCHAR(1000),
 	filePath VARCHAR(300),
 	fileType VARCHAR(20),
 	lessonId BIGINT UNSIGNED,

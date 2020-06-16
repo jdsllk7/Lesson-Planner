@@ -53,3 +53,6 @@
 .navbar-nav .nav-item .nav-link:hover{
   color: #11cbd7 !important;
 }
+.underline{
+  text-decoration: underline;
+}

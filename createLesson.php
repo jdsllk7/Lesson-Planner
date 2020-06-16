@@ -31,7 +31,7 @@ if (!isset($_COOKIE["userId"])) {
                 <select class="form-control p-0 pl-3 bg-light" name="grade">
                   <option value="">- Select -</option>
                   <option value="8">Eight</option>
-                  <option value="9">Nine</option>
+                  <option selected value="9">Nine</option>
                   <option value="10">Ten</option>
                 </select>
               </div>
@@ -41,7 +41,7 @@ if (!isset($_COOKIE["userId"])) {
               <div class="form-group">
                 <select class="form-control p-0 pl-3 bg-light" name="subject">
                   <option value="">- Select -</option>
-                  <option value="Mathematics">Mathematics</option>
+                  <option selected value="Mathematics">Mathematics</option>
                   <option value="English">English</option>
                   <option value="Science">Science</option>
                 </select>
@@ -53,13 +53,13 @@ if (!isset($_COOKIE["userId"])) {
             <div class="form-group col-md-6">
               <label for="firstName">Topic</label>
               <div class="form-group">
-                <input type="text" class="form-control bg-light" name="topic" placeholder="Type here..." />
+                <input type="text" class="form-control bg-light" value="Math Operations" name="topic" placeholder="Type here..." />
               </div>
             </div>
             <div class="form-group col-md-6">
               <label for="firstName">Lesson Name</label>
               <div class="form-group">
-                <input type="text" class="form-control bg-light" name="lessonsName" placeholder="Type here..." />
+                <input type="text" class="form-control bg-light" value="Long Division" name="lessonsName" placeholder="Type here..." />
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@ if (!isset($_COOKIE["userId"])) {
               </div>
             </div>
             <div class="form-group col-md-12 add_text_cover hide">
-              <textarea class="form-control add_text_field" rows="3" name="fileText1" placeholder="Type here..."></textarea>
+              <textarea class="form-control add_text_field" rows="3" name="fileText1" placeholder="Type here...">Flagyl is an antibiotic effective against anaerobic bacteria and certain parasites. ... It also is used to treat parasitic infections including trichomoniasis, amebiasis, and Gardnerella infection. Flagyl also may be used in combination with other drugs to treat H. pylori infection that causes stomach or intestinal ulcers.</textarea>
             </div>
           </div>
 

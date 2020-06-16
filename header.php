@@ -53,11 +53,18 @@ include 'db/vars.php';
                                 <a class="nav-link" href="register.php">Register</a>
                             </li>
                         <?php } elseif (isset($_COOKIE["userId"])) {
-                            echo '<li class="nav-item">
-                                <a class="nav-link">Hi ' . $_COOKIE["fName"] . '</a>
+                            echo '
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.php">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.php#lessons">My Lessons</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="db/logOut.php">Logout</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Hi ' . $_COOKIE["fName"] . '</a>
                             </li>
                             ';
                         } ?>

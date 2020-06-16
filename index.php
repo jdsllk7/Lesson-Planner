@@ -24,7 +24,7 @@
               $data = mysqli_query($conn, "SELECT * FROM lesson where userId = " . $_COOKIE["userId"]);
               $noLessons = '';
               if (mysqli_num_rows($data) == 0) {
-                $noLessons = 'data-toggle="tooltip" title="You have no prepared lessons at the moment"';
+                $noLessons = 'data-toggle="tooltip" title="You do not have any lessons prepared at the moment"';
               }
               echo '
               <a href="#lessons" ' . $noLessons . ' class="block-18 d-flex align-items-center home_link p-4">
@@ -76,39 +76,40 @@ if (isset($_COOKIE["userId"])) {
   $data = mysqli_query($conn, "SELECT * FROM lesson where userId = " . $_COOKIE["userId"]);
 
   if (mysqli_num_rows($data) > 0) {
-
-    $result = mysqli_fetch_assoc($data);
-
-    echo '<a name="lessons"></a>';
-
-    echo '<div class="container mt-5 mb-0 p-0">
-    <h2 class="heading text-left">My Lessons</h2>
-    <i>Number: ' . mysqli_num_rows($data) . '</i>
-  </div>';
+    echo '<section style="height: 100vh;" class="pt-3"><a name="lessons"></a>
+    
+    <div class="container mt-5 mb-0 p-0">
+      <h2 class="heading text-left">My Lessons</h2>
+      <i>Number: ' . mysqli_num_rows($data) . '</i>
+    </div>';
 
     echo '<section class="site-section element-animate">
-    <div class="container">
-      <div class="row">
+  <div class="container">
+  <div class="row">';
 
-        <div class="col-md-6 col-lg-3">
-          <div class="media block-6 d-block">
-            <div class="icon mb-3"><span class="flaticon-open-book"></span></div>
-            <div class="media-body">
-              <h3 class="heading">Grade: ' . $result["grade"] . '</h3>
-              <p class="m-0">Lesson Name: ' . $result["lessonsName"] . '</p>
-              <p class="m-0">Subject: ' . $result["subject"] . '</p>
-              <p class="m-0">Topic: ' . $result["topic"] . '</p>
-              <p><a href="/viewLesson.php?lessonId=' . $result["lessonId"] . '" class="more">View Lesson <span class="ion-arrow-right-c"></span></a></p>
+    while ($result = mysqli_fetch_assoc($data)) {
+
+      echo '<div class="col-md-6 col-lg-3">
+            <div class="media block-6 d-block">
+              <div class="icon mb-3"><span class="flaticon-open-book"></span></div>
+              <div class="media-body">
+                <h3 class="heading">Grade: ' . $result["grade"] . '</h3>
+                <p class="m-0"><span class="text-dark">Lesson Name</span>: ' . $result["lessonsName"] . '</p>
+                <p class="m-0"><span class="text-dark">Subject</span>: ' . $result["subject"] . '</p>
+                <p class="m-0"><span class="text-dark">Topic</span>: ' . $result["topic"] . '</p>
+                <p><a href="viewLesson.php?lessonId=' . $result["lessonId"] . '" class="more">View Lesson <span class="ion-arrow-right-c"></span></a></p>
+              </div>
             </div>
-          </div>
-        </div>';
-
+          </div>';
+    }
     echo '</div>
-    </div>
-  </section>';
+      </div>
+    </section>
+    </section>';
   }
 }
 ?>
 <!-- END section -->
+
 
 <?php include 'footer.php'; ?>
