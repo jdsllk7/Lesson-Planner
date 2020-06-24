@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="col-lg-4">
-        <figure>
+        <figure> 
           <img style="height: 200px;" src="images/books2.png" alt="Image placeholder" class="img-fluid" />
         </figure>
       </div>
