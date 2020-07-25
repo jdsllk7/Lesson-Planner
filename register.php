@@ -32,7 +32,7 @@ if (isset($_COOKIE["userId"])) {
             </div>
             <div class="row">
               <div class="col-md-12 form-group">
-                <label for="name">Employer No.</label>
+                <label for="name">Employee No.</label>
                 <input required type="number" name="eNumber" class="form-control py-2" />
               </div>
             </div>

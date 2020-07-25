@@ -72,7 +72,7 @@ $(document).ready(function () {
             <span class="input-group-addon pl-3 pr-3 text-white hand bg-info ml-1 add_text" data-toggle="tooltip" title="Add Text">
               <span class="mdi mdi-file-edit-outline mdi-24px"></span>
             </span>
-            <span class="input-group-addon pl-3 pr-3 text-white hand bg-danger ml-1 delete_file" data-toggle="tooltip" title="Delete">
+            <span class="input-group-addon pl-3 pr-3 text-white hand bg-danger ml-1 delete_file hide" data-toggle="tooltip" title="Delete">
               <span class="mdi mdi-delete-outline mdi-24px"></span>
             </span>
           </div>

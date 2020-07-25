@@ -29,9 +29,9 @@ if (!isset($_COOKIE["userId"])) {
               <label for="firstName">Grade</label>
               <div class="form-group">
                 <select class="form-control p-0 pl-3 bg-light" name="grade">
-                  <option value="">- Select -</option>
+                  <option selected value="">- Select -</option>
                   <option value="8">Eight</option>
-                  <option selected value="9">Nine</option>
+                  <option value="9">Nine</option>
                   <option value="10">Ten</option>
                 </select>
               </div>
@@ -40,8 +40,8 @@ if (!isset($_COOKIE["userId"])) {
               <label for="firstName">Subject</label>
               <div class="form-group">
                 <select class="form-control p-0 pl-3 bg-light" name="subject">
-                  <option value="">- Select -</option>
-                  <option selected value="Mathematics">Mathematics</option>
+                  <option selected value="">- Select -</option>
+                  <option value="Mathematics">Mathematics</option>
                   <option value="English">English</option>
                   <option value="Science">Science</option>
                 </select>
@@ -53,13 +53,13 @@ if (!isset($_COOKIE["userId"])) {
             <div class="form-group col-md-6">
               <label for="firstName">Topic</label>
               <div class="form-group">
-                <input type="text" class="form-control bg-light" value="Math Operations" name="topic" placeholder="Type here..." />
+                <input type="text" class="form-control bg-light" name="topic" placeholder="Type here..." />
               </div>
             </div>
             <div class="form-group col-md-6">
               <label for="firstName">Lesson Name</label>
               <div class="form-group">
-                <input type="text" class="form-control bg-light" value="Long Division" name="lessonsName" placeholder="Type here..." />
+                <input type="text" class="form-control bg-light" name="lessonsName" placeholder="Type here..." />
               </div>
             </div>
           </div>
@@ -79,22 +79,22 @@ if (!isset($_COOKIE["userId"])) {
       </h3>
       <section>
         <div class="content-wrapper lesson_cover">
-          <h4 class="section-heading">Upload Lesson Files</h4>
+          <h4 class="section-heading">Upload Lesson Files (images/videos)</h4>
 
           <div class="row home_link p-2 lesson_div">
             <div class="form-group col-md-12 lesson_div_second">
               <div class="input-group lesson_div_first lesson_div_og">
-                <input type="file" name="file1" class="form-control p-2 pt-2 bg-light fileUpload" accept=".jpg,.mp4,.png,.pdf,.jpeg,.gif,.mkv,.avi,.webm,.wmv,.3gp"/>
+                <input type="file" name="file1" class="form-control p-2 pt-2 bg-light fileUpload" accept=".jpg,.mp4,.png,.pdf,.jpeg,.gif,.mkv,.avi,.webm,.wmv,.3gp" />
                 <span class="input-group-addon pl-3 pr-3 text-white hand bg-info ml-1 add_text" data-toggle="tooltip" title="Add Text">
                   <span class="mdi mdi-file-edit-outline mdi-24px"></span>
                 </span>
-                <span class="input-group-addon pl-3 pr-3 text-white hand bg-danger ml-1 delete_file" data-toggle="tooltip" title="Delete">
+                <span class="input-group-addon pl-3 pr-3 text-white hand bg-danger ml-1 delete_file hide" data-toggle="tooltip" title="Delete">
                   <span class="mdi mdi-delete-outline mdi-24px"></span>
                 </span>
               </div>
             </div>
             <div class="form-group col-md-12 add_text_cover hide">
-              <textarea class="form-control add_text_field" rows="3" name="fileText1" placeholder="Type here...">Flagyl is an antibiotic effective against anaerobic bacteria and certain parasites. ... It also is used to treat parasitic infections including trichomoniasis, amebiasis, and Gardnerella infection. Flagyl also may be used in combination with other drugs to treat H. pylori infection that causes stomach or intestinal ulcers.</textarea>
+              <textarea class="form-control add_text_field" rows="3" name="fileText1" placeholder="Type here..."></textarea>
             </div>
           </div>
 

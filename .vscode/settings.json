@@ -8,5 +8,8 @@
         "plaintext",
         "html",
         "php"
+    ],
+    "cSpell.words": [
+        "sql"
     ]
 }
